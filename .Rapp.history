@@ -1,0 +1,53 @@
+quit
+?rpart
+library(rpart)
+?rpart
+?table
+?data.matrix
+install.packages("remoter")
+install.packages("remoter")#
+install.packages("tidytext")#
+install.packages("nnet")#
+install.packages("dplyr")#
+install.packages("SentimentAnalysis")
+q()
+library(remoter)
+remoter::client(192.168.1.42)
+remoter::client("192.168.1.42")
+q()
+remoter::client("192.168.1.42")
+getwd()
+chwd("/Users/jamster/Desktop")
+setwd("/Users/jamster/Desktop")
+remoter::client("192.168.1.42")
+library(ggmap)#
+geocode("6901 Turquoise Dr SW Lakewood, WA")
+install.packages("ggmap")
+library(ggmap)#
+geocode("6901 Turquoise Dr SW Lakewood, WA")
+sapply(geocode("6901 Turquoise Dr SW Lakewood, WA"), class)
+?multinom
+library(nnet)
+?multinom
+fake <- read.csv("FakeProject-data/fakeTrainData1.csv")
+real <- read.csv("FakeProject-data/realTrainData1.csv")
+comb <- rbind(fake,real)
+comb <- as.dataMatrix(comb)
+comb <- data.matrix(comb)
+glm(realFAKEcat ~., data=comb)
+comb <- rbind(fake,real)
+glm(realFAKEcat ~., data=comb)
+rpart(realFAKEcat ~., data=comb)
+library(rpart)
+rpart(realFAKEcat ~., data=comb)
+model <- rpart(realFAKEcat ~., data=comb)
+summary(model)
+plot.rpart(model)
+plot(model)
+glm(realFAKEcat ~., data=comb[,-c(1)])
+install.packages("party")
+ctree(realFAKEcat ~ . , data=comb[,-c(1)])
+library(party)
+ctree(realFAKEcat ~ . , data=comb[,-c(1)])
+model <- ctree(realFAKEcat ~ . , data=comb[,-c(1)])
+plot(model)
