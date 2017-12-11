@@ -1,5 +1,5 @@
-fake <- read.csv("fakeTrainData1b.csv")
-real <- read.csv("realTrainData1b.csv")
+fake <- read.csv("fakeTrainData1.csv")
+real <- read.csv("realTrainData1.csv")
 df <- rbind(fake, real)
 
 test <- read.csv("testData1b.csv")
@@ -35,4 +35,8 @@ df0.binom.predict <- predict(df0.binom,newdata=subset(test0,select=-c(1,12)),typ
 df0.binom.predict.res <- ifelse(df0.binom.predict > 0.5,1,0)
 df0.binom.predict.ERR <- mean(df0.binom.predict.res != test0$last)
 print(paste('Accuracy',1-df0.binom.predict.ERR))
+
+
+library(randomForest)
+df0.forest <- randomForest(realFAKEcat ~. , test)
 
